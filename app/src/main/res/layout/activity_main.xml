@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.a2048.MainActivity">
+    android:background="#bbada0"
+    android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/ll_best"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal" >
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最高纪录："
+            android:textColor="#FF0000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_bestScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <com.example.a2048.GameView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/game"
+        android:layout_weight="4" >
+    </com.example.a2048.GameView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="得分:"
+            android:textColor="#98F5FF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#98F5FF"
+            android:text="0"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
